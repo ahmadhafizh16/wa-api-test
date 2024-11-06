@@ -11,6 +11,7 @@
 
 /storage/*.key
 /storage/*.json
+/storage/
 /storage/*.swp
 /storage/logs/laravel.log
 

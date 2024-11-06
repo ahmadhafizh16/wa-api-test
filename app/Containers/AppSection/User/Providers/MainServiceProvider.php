@@ -23,11 +23,7 @@ class MainServiceProvider extends ParentMainServiceProvider
     {
         parent::boot();
 
-        Password::defaults(static fn () => Password::min(8)
-            ->letters()
-            ->mixedCase()
-            ->numbers()
-            ->symbols());
+        Password::defaults(static fn () => Password::min(8));
     }
 
     public function register(): void
