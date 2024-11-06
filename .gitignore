@@ -41,6 +41,7 @@ after.sh
 aliases
 /psalm_cache/
 /app/Containers/Vendor
+/storage
 
 #PHP Stan
 phpstan.neon

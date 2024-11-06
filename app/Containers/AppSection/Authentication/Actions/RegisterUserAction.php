@@ -35,9 +35,6 @@ class RegisterUserAction extends ParentAction
 
         $user = $this->createUserTask->run($sanitizedData);
 
-        $user->notify(new Welcome());
-        $this->sendVerificationEmailTask->run($user, $request->verification_url);
-
         return $user;
     }
 }
