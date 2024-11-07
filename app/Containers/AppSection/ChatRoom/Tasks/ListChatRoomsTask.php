@@ -24,7 +24,7 @@ class ListChatRoomsTask extends ParentTask
         $limit = request('limit', 10);
 
         if (!empty($ids)) {
-            if ($mode = 'in') {
+            if ($mode == 'in') {
                 $repo = $repo->whereIn('id', $ids);
             } else {
                 $repo = $repo->whereNotIn('id', $ids);

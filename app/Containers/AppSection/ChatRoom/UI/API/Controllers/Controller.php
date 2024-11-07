@@ -10,12 +10,14 @@ use App\Containers\AppSection\ChatRoom\Actions\FindChatRoomByIdAction;
 use App\Containers\AppSection\ChatRoom\Actions\JoinChatRoomAction;
 use App\Containers\AppSection\ChatRoom\Actions\LeaveChatRoomAction;
 use App\Containers\AppSection\ChatRoom\Actions\ListSubscribedChatRoomsAction;
+use App\Containers\AppSection\ChatRoom\Actions\ListUnsubscribedChatRoomsAction;
 use App\Containers\AppSection\ChatRoom\Actions\UpdateChatRoomAction;
 use App\Containers\AppSection\ChatRoom\UI\API\Requests\CreateChatRoomRequest;
 use App\Containers\AppSection\ChatRoom\UI\API\Requests\FindChatRoomByIdRequest;
 use App\Containers\AppSection\ChatRoom\UI\API\Requests\JoinChatRoomRequest;
 use App\Containers\AppSection\ChatRoom\UI\API\Requests\LeaveChatRoomRequest;
 use App\Containers\AppSection\ChatRoom\UI\API\Requests\ListSubscribedChatRoomsRequest;
+use App\Containers\AppSection\ChatRoom\UI\API\Requests\ListUnsubscribedChatRoomsRequest;
 use App\Containers\AppSection\ChatRoom\UI\API\Requests\UpdateChatRoomRequest;
 use App\Containers\AppSection\ChatRoom\UI\API\Transformers\ChatRoomTransformer;
 use App\Ship\Exceptions\CreateResourceFailedException;
@@ -34,6 +36,7 @@ class Controller extends ApiController
         private readonly LeaveChatRoomAction $leaveChatRoomAction,
         private readonly FindChatRoomByIdAction $findChatRoomByIdAction,
         private readonly ListSubscribedChatRoomsAction $listSubscribedChatRoomsAction,
+        private readonly ListUnsubscribedChatRoomsAction $listUnsubscribedChatRoomsAction,
     ) {
     }
 
@@ -89,6 +92,18 @@ class Controller extends ApiController
     public function getAllSubscribedChatRooms(ListSubscribedChatRoomsRequest $request): array
     {
         $chatrooms = $this->listSubscribedChatRoomsAction->run($request);
+
+        return $this->transform($chatrooms, ChatRoomTransformer::class);
+    }
+
+    /**
+     * @throws InvalidTransformerException
+     * @throws CoreInternalErrorException
+     * @throws RepositoryException
+     */
+    public function getAllUnsubscribedChatRooms(ListUnsubscribedChatRoomsRequest $request): array
+    {
+        $chatrooms = $this->listUnsubscribedChatRoomsAction->run($request);
 
         return $this->transform($chatrooms, ChatRoomTransformer::class);
     }
