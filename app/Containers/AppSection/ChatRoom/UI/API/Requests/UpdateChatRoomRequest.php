@@ -12,7 +12,6 @@ class UpdateChatRoomRequest extends ParentRequest
     ];
 
     protected array $decode = [
-        'id',
     ];
 
     protected array $urlParameters = [
@@ -22,7 +21,7 @@ class UpdateChatRoomRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            // 'id' => 'required',
+            'name' => 'required',
         ];
     }
 

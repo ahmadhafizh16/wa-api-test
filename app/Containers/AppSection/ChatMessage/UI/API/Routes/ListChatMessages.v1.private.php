@@ -4,7 +4,7 @@
  * @apiGroup           ChatMessage
  * @apiName            ListChatMessages
  *
- * @api                {GET} /v1/chat-messages List Chat Messages
+ * @api                {GET} /v1/chat-messages/:chat_room_id List Chat Messages
  * @apiDescription     Endpoint description here...
  *
  * @apiVersion         1.0.0

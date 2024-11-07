@@ -24,7 +24,7 @@ class MessageSend extends ParentEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('chat-room.'. $this->chatRoomId),
+            new PrivateChannel('chat-room.'. $this->chatRoomId.'.messageSent'),
         ];
     }
 }

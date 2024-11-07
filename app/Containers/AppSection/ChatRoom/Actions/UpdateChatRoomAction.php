@@ -25,7 +25,7 @@ class UpdateChatRoomAction extends ParentAction
     public function run(UpdateChatRoomRequest $request): ChatRoom
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+            'name'
         ]);
 
         return $this->updateChatRoomTask->run($data, $request->id);

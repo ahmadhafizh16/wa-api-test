@@ -12,7 +12,6 @@ class FindChatRoomByIdRequest extends ParentRequest
     ];
 
     protected array $decode = [
-        'id',
     ];
 
     protected array $urlParameters = [

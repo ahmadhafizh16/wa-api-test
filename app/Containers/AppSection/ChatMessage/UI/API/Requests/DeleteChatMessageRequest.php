@@ -12,17 +12,16 @@ class DeleteChatMessageRequest extends ParentRequest
     ];
 
     protected array $decode = [
-        'id',
     ];
 
     protected array $urlParameters = [
-        'id',
+        'chat_room_id',
     ];
 
     public function rules(): array
     {
         return [
-            // 'id' => 'required',
+            'id' => 'required|numeric',
         ];
     }
 

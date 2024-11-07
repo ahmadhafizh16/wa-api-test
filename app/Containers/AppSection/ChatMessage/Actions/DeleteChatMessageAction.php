@@ -2,6 +2,7 @@
 
 namespace App\Containers\AppSection\ChatMessage\Actions;
 
+use App\Containers\AppSection\ChatMessage\Events\MessageDeleted;
 use App\Containers\AppSection\ChatMessage\Tasks\DeleteChatMessageTask;
 use App\Containers\AppSection\ChatMessage\UI\API\Requests\DeleteChatMessageRequest;
 use App\Ship\Exceptions\DeleteResourceFailedException;
@@ -21,6 +22,13 @@ class DeleteChatMessageAction extends ParentAction
      */
     public function run(DeleteChatMessageRequest $request): int
     {
-        return $this->deleteChatMessageTask->run($request->id);
+        $deletedCount =  $this->deleteChatMessageTask->run($request->id, $request->user()->id);
+        
+        if ($deletedCount == 0) {
+            throw new NotFoundException('Cannot delete this message');
+        }
+        MessageDeleted::dispatch($request->chat_room_id, $request->id);
+
+        return $deletedCount;
     }
 }

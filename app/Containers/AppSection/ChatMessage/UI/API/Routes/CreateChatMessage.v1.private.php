@@ -4,7 +4,7 @@
  * @apiGroup           ChatMessage
  * @apiName            SendChatMessage
  *
- * @api                {POST} /v1/chat-messages/{chat_room_id} Send Chat Message to specified chat rooom id
+ * @api                {POST} /v1/chat-messages/:chat_room_id Send Chat Message to specified chat rooom id
  * @apiDescription     Send Chat Message to specified chat rooom id
  *
  * @apiVersion         1.0.0

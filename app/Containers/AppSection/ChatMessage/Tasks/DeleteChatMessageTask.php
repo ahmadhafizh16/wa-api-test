@@ -19,10 +19,14 @@ class DeleteChatMessageTask extends ParentTask
      * @throws DeleteResourceFailedException
      * @throws NotFoundException
      */
-    public function run($id): int
+    public function run(int $messageId, string $userId): int
     {
         try {
-            return $this->repository->delete($id);
+            return $this->repository
+                ->where('id', $messageId)
+                ->where('sender_id', $userId)
+                ->delete()
+            ;
         } catch (ModelNotFoundException) {
             throw new NotFoundException();
         } catch (\Exception) {
