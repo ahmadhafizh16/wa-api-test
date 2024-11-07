@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "e18b5525-ca32-4b65-8d7e-912d8817c168",
+		"name": "WA TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "313530"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mytest1@mail.com\",\r\n    \"password\": \"12345678\",\r\n    \"name\": \"ahmad\",\r\n    \"gender\": \"male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ahmadhafizhm.my.id/v1/register",
+					"protocol": "http",
+					"host": [
+						"ahmadhafizhm",
+						"my",
+						"id"
+					],
+					"path": [
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var token = pm.response.json().data.access_token\r",
+							"pm.environment.set(\"authToken\", token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mytest1@mail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ahmadhafizhm.my.id/v1/clients/web/login",
+					"protocol": "http",
+					"host": [
+						"ahmadhafizhm",
+						"my",
+						"id"
+					],
+					"path": [
+						"v1",
+						"clients",
+						"web",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Unsub chat Room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "limit",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ahmadhafizhm.my.id/v1/chat-rooms-not-sub?limit=&page=",
+					"protocol": "http",
+					"host": [
+						"ahmadhafizhm",
+						"my",
+						"id"
+					],
+					"path": [
+						"v1",
+						"chat-rooms-not-sub"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Subscribed Chat Room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "limit",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ahmadhafizhm.my.id/v1/chat-rooms-not-sub?limit=&page=",
+					"protocol": "http",
+					"host": [
+						"ahmadhafizhm",
+						"my",
+						"id"
+					],
+					"path": [
+						"v1",
+						"chat-rooms-not-sub"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Join Chat Room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "limit",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ahmadhafizhm.my.id/v1/chat-rooms/join/6c8e1494-1942-4933-84cb-28cd3bb3c9bf",
+					"protocol": "http",
+					"host": [
+						"ahmadhafizhm",
+						"my",
+						"id"
+					],
+					"path": [
+						"v1",
+						"chat-rooms",
+						"join",
+						"6c8e1494-1942-4933-84cb-28cd3bb3c9bf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leave Chat Room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "limit",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ahmadhafizhm.my.id/v1/chat-rooms/leave/6c8e1494-1942-4933-84cb-28cd3bb3c9bf",
+					"protocol": "http",
+					"host": [
+						"ahmadhafizhm",
+						"my",
+						"id"
+					],
+					"path": [
+						"v1",
+						"chat-rooms",
+						"leave",
+						"6c8e1494-1942-4933-84cb-28cd3bb3c9bf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Chat To Room Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "testing 2",
+							"type": "text"
+						},
+						{
+							"key": "attachment",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "reply",
+							"value": "",
+							"description": "Chat ID To Reply",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ahmadhafizhm.my.id/v1/chat-messages/6c8e1494-1942-4933-84cb-28cd3bb3c9bf",
+					"protocol": "http",
+					"host": [
+						"ahmadhafizhm",
+						"my",
+						"id"
+					],
+					"path": [
+						"v1",
+						"chat-messages",
+						"6c8e1494-1942-4933-84cb-28cd3bb3c9bf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Message in Room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ahmadhafizhm.my.id/v1/chat-messages/6c8e1494-1942-4933-84cb-28cd3bb3c9bf",
+					"protocol": "http",
+					"host": [
+						"ahmadhafizhm",
+						"my",
+						"id"
+					],
+					"path": [
+						"v1",
+						"chat-messages",
+						"6c8e1494-1942-4933-84cb-28cd3bb3c9bf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
