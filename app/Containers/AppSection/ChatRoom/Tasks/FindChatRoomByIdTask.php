@@ -17,10 +17,15 @@ class FindChatRoomByIdTask extends ParentTask
     /**
      * @throws NotFoundException
      */
-    public function run(string $id): ChatRoom
+    public function run(string $id, bool $lock = false): ChatRoom
     {
         try {
-            return $this->repository->find($id);
+            $repo = $this->repository;
+            if ($lock) {
+                $repo->lockForUpdate();
+            }   
+
+            return $repo->find($id);
         } catch (\Exception) {
             throw new NotFoundException();
         }

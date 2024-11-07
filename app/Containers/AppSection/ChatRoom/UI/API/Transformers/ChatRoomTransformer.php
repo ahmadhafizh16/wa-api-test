@@ -22,6 +22,7 @@ class ChatRoomTransformer extends ParentTransformer
             'id' => $chatroom->id,
             'name' => $chatroom->name,
             'owner_id' => $chatroom->owner_id,
+            'member_countt' => $chatroom->user_count,
             'created_at' => $chatroom->created_at,
         ];
     }

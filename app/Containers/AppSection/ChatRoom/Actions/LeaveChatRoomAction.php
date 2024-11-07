@@ -3,6 +3,7 @@
 namespace App\Containers\AppSection\ChatRoom\Actions;
 
 use App\Containers\AppSection\ChatRoom\Events\LeaveChatRoomEvent;
+use App\Containers\AppSection\ChatRoom\Tasks\DecreaseMemberChatRoomCountTask;
 use App\Containers\AppSection\ChatRoom\Tasks\DeleteSubscriptionTask;
 use App\Containers\AppSection\ChatRoom\Tasks\FindChatRoomByIdTask;
 use App\Containers\AppSection\ChatRoom\Tasks\FindSubscriptionTask;
@@ -17,6 +18,7 @@ class LeaveChatRoomAction extends ParentAction
         private readonly DeleteSubscriptionTask $deleteSubscriptionTask,
         private readonly FindSubscriptionTask $findSubscriptionTask,
         private readonly FindChatRoomByIdTask $findChatRoomByIdTask,
+        private readonly DecreaseMemberChatRoomCountTask $decreateMemberChatRoomCountTask,
     ) {
     }
 
@@ -43,6 +45,9 @@ class LeaveChatRoomAction extends ParentAction
         }
 
         $deleted = $this->deleteSubscriptionTask->run($data);
+
+        $this->decreateMemberChatRoomCountTask->run($data['chat_room_id']);
+
         LeaveChatRoomEvent::dispatch($user, $data['chat_room_id']);
 
         return $deleted;
