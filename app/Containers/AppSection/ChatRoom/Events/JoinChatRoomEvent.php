@@ -5,7 +5,7 @@ namespace App\Containers\AppSection\ChatRoom\Events;
 use App\Containers\AppSection\User\Models\User;
 use App\Ship\Parents\Events\Event as ParentEvent;
 use Illuminate\Broadcasting\Channel;
-use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class JoinChatRoomEvent extends ParentEvent implements ShouldBroadcast
@@ -22,7 +22,7 @@ class JoinChatRoomEvent extends ParentEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('chat-room.'. $this->chatRoomId. 'joined'),
+            new PresenceChannel('chat-room.'. $this->chatRoomId. '.joined'),
         ];
     }
 }

@@ -4,7 +4,7 @@ namespace App\Containers\AppSection\ChatMessage\Events;
 
 use App\Ship\Parents\Events\Event as ParentEvent;
 use Illuminate\Broadcasting\Channel;
-use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class MessageDeleted extends ParentEvent implements ShouldBroadcast
@@ -21,7 +21,7 @@ class MessageDeleted extends ParentEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('chat-room.'. $this->chatRoomId .'.messageDeleted'),
+            new PresenceChannel('chat-room.'. $this->chatRoomId .'.messageDeleted'),
         ];
     }
 }

@@ -54,7 +54,7 @@ class JoinChatRoomAction extends ParentAction
         $chatSubs = $this->createSubscriptionTask->run($data);
         $this->increaseMemberChatRoomCountTask->run($data['chat_room_id']);
 
-        JoinChatRoomEvent::dispatch($user, $data['chat_room_id']);
+        broadcast(JoinChatRoomEvent::dispatch($user, $data['chat_room_id']))->toOthers();
 
         return $chatSubs;
     }

@@ -5,7 +5,7 @@ namespace App\Containers\AppSection\ChatMessage\Events;
 use App\Containers\AppSection\ChatMessage\UI\API\Transformers\ChatMessageTransformer;
 use App\Ship\Parents\Events\Event as ParentEvent;
 use Illuminate\Broadcasting\Channel;
-use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class MessageSend extends ParentEvent implements ShouldBroadcast
@@ -24,7 +24,7 @@ class MessageSend extends ParentEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('chat-room.'. $this->chatRoomId.'.messageSent'),
+            new PresenceChannel('chat-room.'. $this->chatRoomId.'.messageSent'),
         ];
     }
 }
