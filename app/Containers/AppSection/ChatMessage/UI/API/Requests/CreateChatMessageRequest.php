@@ -22,7 +22,7 @@ class CreateChatMessageRequest extends ParentRequest
     {
         return [
             'text' => 'required',
-            'attachment' => 'mimes:jpeg,png,jpg,gif,svg,mp4,avi,mkv,wmv',
+            'attachment' => '',//'mimes:jpeg,png,jpg,gif,svg,mp4,avi,mkv,wmv',
             'reply' => 'numeric', // message id
         ];
     }

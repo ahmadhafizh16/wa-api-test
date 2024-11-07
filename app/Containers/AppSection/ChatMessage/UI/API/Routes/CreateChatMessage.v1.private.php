@@ -13,8 +13,11 @@
  * @apiHeader          {String} accept=application/json
  * @apiHeader          {String} authorization=Bearer
  *
- * @apiParam           {String} parameters here...
- *
+ * @apiBody           {String} text message content
+ * @apiBody           {File} [attachment="PLEASE USE POSTMAN INSTEAD OF THIS APIDOC TO SEND FILE, THIS APIDOC DOESNT SUPPORT SENDING BINARY"] file "PLEASE USE POSTMAN INSTEAD OF THIS APIDOC TO SEND FILE, THIS APIDOC DOESNT SUPPORT SENDING BINARY"
+ * @apiBody           {Number} [reply] message id number to reply
+ * 
+ * 
  * @apiSuccessExample  {json} Success-Response:
  * HTTP/1.1 200 OK
  * {
@@ -24,7 +27,7 @@
  *       "sender_id": 4,
  *       "content": {
  *           "text": "lets have a chat",
- *           "attachment": "http://api.ggl-api.localhost/storage",
+ *           "attachment": "attachment"",
  *           "reply": {
  *               "message_id": 2,
  *               "user_name": "name",

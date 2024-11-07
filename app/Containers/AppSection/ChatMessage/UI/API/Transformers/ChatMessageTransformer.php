@@ -23,7 +23,7 @@ class ChatMessageTransformer extends ParentTransformer
             'sender_id' => $chatmessage->sender_id,
             'content' => [
                 'text' => $chatmessage->content['text'],
-                'attachment' => asset('storage/'.$chatmessage->content['attachment']),
+                'attachment' => $chatmessage->content['attachment'] ? asset('storage/'.$chatmessage->content['attachment']) : null,
                 'reply' => $chatmessage->content['reply'],
             ],
             'created_at' => $chatmessage->created_at->format('Y-m-d H:i:s.u'),

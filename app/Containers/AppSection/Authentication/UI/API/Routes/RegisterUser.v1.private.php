@@ -28,9 +28,8 @@
  *
  * special character
  *
- * @apiParam           {String} [name] min:2|max:50
- * @apiParam           {String="male","female","unspecified"} [gender]
- * @apiParam           {Date} [birth] format: Y-m-d / e.g. 2015-10-15
+ * @apiBody           {String} [name] min:2|max:50
+ * @apiBody           {String="male","female","unspecified"} [gender]
  *
  * @apiUse             UserSuccessSingleResponse
  */

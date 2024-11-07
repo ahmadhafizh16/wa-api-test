@@ -26,7 +26,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:48:35.000000"
@@ -37,7 +37,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:49:01.000000"
@@ -48,7 +48,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:49:43.000000"
@@ -59,7 +59,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:52:36.000000"
@@ -70,7 +70,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:52:37.000000"
@@ -81,7 +81,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:52:38.000000"
@@ -92,7 +92,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:52:39.000000"
@@ -103,7 +103,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:52:43.000000"
@@ -114,7 +114,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:52:43.000000"
@@ -125,7 +125,7 @@
  *           "sender_id": 4,
  *           "content": {
  *               "text": "lets have a chat",
- *               "attachment": "http://api.ggl-api.localhost/storage",
+ *               "attachment": "attachment"",
  *               "reply": null
  *           },
  *           "created_at": "2024-11-07 03:52:44.000000"
