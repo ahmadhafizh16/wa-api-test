@@ -2,6 +2,7 @@
 
 namespace App\Containers\AppSection\ChatRoom\Actions;
 
+use App\Containers\AppSection\ChatMessage\Events\JoinChatRoomEvent;
 use App\Containers\AppSection\ChatRoom\Models\Subscription;
 use App\Containers\AppSection\ChatRoom\Tasks\CreateSubscriptionTask;
 use App\Containers\AppSection\ChatRoom\Tasks\FindSubscriptionTask;
@@ -35,6 +36,9 @@ class JoinChatRoomAction extends ParentAction
             throw new AccessDeniedException('Chat room already joined');
         }
 
-        return $this->createSubscriptionTask->run($data);
+        $chatSubs = $this->createSubscriptionTask->run($data);
+        JoinChatRoomEvent::dispatch($user, $data['chat_room_id']);
+
+        return $chatSubs;
     }
 }

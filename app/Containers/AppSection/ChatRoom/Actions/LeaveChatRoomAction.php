@@ -2,6 +2,7 @@
 
 namespace App\Containers\AppSection\ChatRoom\Actions;
 
+use App\Containers\AppSection\ChatMessage\Events\LeaveChatRoomEvent;
 use App\Containers\AppSection\ChatRoom\Tasks\DeleteSubscriptionTask;
 use App\Containers\AppSection\ChatRoom\Tasks\FindChatRoomByIdTask;
 use App\Containers\AppSection\ChatRoom\Tasks\FindSubscriptionTask;
@@ -41,6 +42,9 @@ class LeaveChatRoomAction extends ParentAction
             throw new AccessDeniedException('Owner cant left the chat room');
         }
 
-        return $this->deleteSubscriptionTask->run($data);
+        $deleted = $this->deleteSubscriptionTask->run($data);
+        LeaveChatRoomEvent::dispatch($user, $data['chat_room_id']);
+
+        return $deleted;
     }
 }
