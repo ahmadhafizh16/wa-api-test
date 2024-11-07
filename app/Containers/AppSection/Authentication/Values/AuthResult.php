@@ -9,7 +9,6 @@ class AuthResult extends ParentValue
 {
     public function __construct(
         public readonly Token $token,
-        public readonly Cookie $refreshTokenCookie,
     ) {
     }
 

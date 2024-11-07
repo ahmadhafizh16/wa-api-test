@@ -6,7 +6,6 @@ use Apiato\Core\Exceptions\IncorrectIdException;
 use App\Containers\AppSection\Authentication\Classes\LoginFieldParser;
 use App\Containers\AppSection\Authentication\Exceptions\LoginFailedException;
 use App\Containers\AppSection\Authentication\Tasks\CallOAuthServerTask;
-use App\Containers\AppSection\Authentication\Tasks\MakeRefreshTokenCookieTask;
 use App\Containers\AppSection\Authentication\UI\API\Requests\LoginProxyPasswordGrantRequest;
 use App\Containers\AppSection\Authentication\Values\AuthResult;
 use App\Ship\Parents\Actions\Action as ParentAction;
@@ -15,7 +14,6 @@ class ApiLoginProxyForWebClientAction extends ParentAction
 {
     public function __construct(
         private readonly CallOAuthServerTask $callOAuthServerTask,
-        private readonly MakeRefreshTokenCookieTask $makeRefreshTokenCookieTask,
     ) {
     }
 
@@ -41,14 +39,11 @@ class ApiLoginProxyForWebClientAction extends ParentAction
 
             try {
                 $token = $this->callOAuthServerTask->run($sanitizedData, $request->headers->get('accept-language'));
-                $refreshTokenCookie = $this->makeRefreshTokenCookieTask->run($token->refreshToken);
 
-                return new AuthResult($token, $refreshTokenCookie);
+                return new AuthResult($token);
             } catch (LoginFailedException) {
-                // try the next login field
+                throw new LoginFailedException();
             }
         }
-
-        throw new LoginFailedException();
     }
 }
