@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Containers\AppSection\ChatRoom\Tasks;
+namespace App\Containers\AppSection\ChatMessage\Tasks;
 
-use App\Containers\AppSection\ChatRoom\Data\Repositories\ChatRoomRepository;
-use App\Containers\AppSection\ChatRoom\Models\ChatRoom;
+use App\Containers\AppSection\ChatMessage\Data\Repositories\ChatMessageRepository;
+use App\Containers\AppSection\ChatMessage\Models\ChatMessage;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Parents\Tasks\Task as ParentTask;
 
-class FindChatRoomByIdTask extends ParentTask
+class FindChatMessageByIdTask extends ParentTask
 {
     public function __construct(
-        protected readonly ChatRoomRepository $repository,
+        protected readonly ChatMessageRepository $repository,
     ) {
     }
 
     /**
      * @throws NotFoundException
      */
-    public function run(string $id): ChatRoom
+    public function run($id): ChatMessage
     {
         try {
             return $this->repository->find($id);

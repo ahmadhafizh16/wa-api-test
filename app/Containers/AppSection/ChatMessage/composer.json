@@ -1,0 +1,6 @@
+{
+    "name": "apiato/chatmessage",
+    "description": "ChatMessage Container for apiato.",
+    "require": {
+    }
+}

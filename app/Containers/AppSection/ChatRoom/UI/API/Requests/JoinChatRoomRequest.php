@@ -4,7 +4,7 @@ namespace App\Containers\AppSection\ChatRoom\UI\API\Requests;
 
 use App\Ship\Parents\Requests\Request as ParentRequest;
 
-class ListChatRoomsRequest extends ParentRequest
+class JoinChatRoomRequest extends ParentRequest
 {
     protected array $access = [
         'permissions' => '',
@@ -12,17 +12,15 @@ class ListChatRoomsRequest extends ParentRequest
     ];
 
     protected array $decode = [
-        // 'id',
     ];
 
     protected array $urlParameters = [
-        // 'id',
+        'chat_room_id'
     ];
 
     public function rules(): array
     {
         return [
-            // 'id' => 'required',
         ];
     }
 

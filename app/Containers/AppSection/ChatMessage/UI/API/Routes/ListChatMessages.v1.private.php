@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @apiGroup           ChatRoom
- * @apiName            ListChatRooms
+ * @apiGroup           ChatMessage
+ * @apiName            ListChatMessages
  *
- * @api                {GET} /v1/chat-rooms List Chat Rooms
+ * @api                {GET} /v1/chat-messages List Chat Messages
  * @apiDescription     Endpoint description here...
  *
  * @apiVersion         1.0.0
@@ -22,9 +22,9 @@
  * }
  */
 
-use App\Containers\AppSection\ChatRoom\UI\API\Controllers\Controller;
+use App\Containers\AppSection\ChatMessage\UI\API\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('chat-rooms', Controller::class)
-//     ->middleware(['auth:api']);
+Route::get('chat-messages/{chat_room_id}', [Controller::class, 'listChatMessages'])
+    ->middleware(['auth:api']);
 

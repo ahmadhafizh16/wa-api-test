@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Containers\AppSection\ChatRoom\UI\API\Requests;
+namespace App\Containers\AppSection\ChatMessage\UI\API\Requests;
 
 use App\Ship\Parents\Requests\Request as ParentRequest;
 
-class DeleteChatRoomRequest extends ParentRequest
+class FindChatMessageByIdRequest extends ParentRequest
 {
     protected array $access = [
         'permissions' => '',

@@ -2,10 +2,10 @@
 
 /**
  * @apiGroup           ChatRoom
- * @apiName            DeleteChatRoom
+ * @apiName            LeaveChatRoom
  *
- * @api                {DELETE} /v1/chat-rooms/:id Delete Chat Room
- * @apiDescription     Endpoint description here...
+ * @api                {POST} /v1/chat-rooms/leave/{chat_room_id} Leave Chat Room
+ * @apiDescription     Leave chat room
  *
  * @apiVersion         1.0.0
  * @apiPermission      Authenticated ['permissions' => '', 'roles' => '']
@@ -13,18 +13,18 @@
  * @apiHeader          {String} accept=application/json
  * @apiHeader          {String} authorization=Bearer
  *
- * @apiParam           {String} parameters here...
+ * @apiBody            {String} name Chat room name
  *
  * @apiSuccessExample  {json} Success-Response:
- * HTTP/1.1 200 OK
+ * HTTP/1.1 204 No Content
  * {
- *     // Insert the response of the request here...
+ * 
  * }
  */
 
 use App\Containers\AppSection\ChatRoom\UI\API\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-// Route::delete('chat-rooms/{id}', Controller::class)
-//     ->middleware(['auth:api']);
+Route::post('chat-rooms/leave/{chat_room_id}', [Controller::class, 'leaveChatRoom'])
+    ->middleware(['auth:api']);
 

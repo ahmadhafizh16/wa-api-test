@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Containers\AppSection\ChatRoom\Tasks;
+namespace App\Containers\AppSection\ChatMessage\Tasks;
 
-use App\Containers\AppSection\ChatRoom\Data\Repositories\ChatRoomRepository;
+use App\Containers\AppSection\ChatMessage\Data\Repositories\ChatMessageRepository;
 use App\Ship\Exceptions\DeleteResourceFailedException;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Parents\Tasks\Task as ParentTask;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class DeleteChatRoomTask extends ParentTask
+class DeleteChatMessageTask extends ParentTask
 {
     public function __construct(
-        protected readonly ChatRoomRepository $repository,
+        protected readonly ChatMessageRepository $repository,
     ) {
     }
 

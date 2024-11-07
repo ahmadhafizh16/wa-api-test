@@ -18,8 +18,19 @@ class ListChatRoomsTask extends ParentTask
      * @throws CoreInternalErrorException
      * @throws RepositoryException
      */
-    public function run(): mixed
+    public function run(array $ids = [], string $mode = 'in'): mixed
     {
-        return $this->repository->addRequestCriteria()->paginate();
+        $repo = $this->repository;
+        $limit = request('limit', 10);
+
+        if (!empty($ids)) {
+            if ($mode = 'in') {
+                $repo = $repo->whereIn('id', $ids);
+            } else {
+                $repo = $repo->whereNotIn('id', $ids);
+            }
+        }
+
+        return $repo->paginate($limit);
     }
 }
