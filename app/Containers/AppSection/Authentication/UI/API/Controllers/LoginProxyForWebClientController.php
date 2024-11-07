@@ -14,6 +14,6 @@ class LoginProxyForWebClientController extends ApiController
     {
         $result = $action->run($request);
 
-        return $this->json($this->transform($result->token, TokenTransformer::class))->withCookie($result->refreshTokenCookie);
+        return $this->json($this->transform($result->token, TokenTransformer::class));
     }
 }

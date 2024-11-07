@@ -1,6 +1,6 @@
 <?php
 /**
- * @apiGroup           OAuth2
+ * @apiGroup           Authentication
  *
  * @apiName            Logout
  *

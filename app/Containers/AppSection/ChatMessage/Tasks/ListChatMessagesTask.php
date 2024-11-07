@@ -24,7 +24,7 @@ class ListChatMessagesTask extends ParentTask
 
         return $this->repository
             ->where('chat_room_id', $chatRoomId)
-            ->orderBy('created_at')
+            ->orderBy('created_at','DESC')
             ->paginate($limit)
         ;
     }

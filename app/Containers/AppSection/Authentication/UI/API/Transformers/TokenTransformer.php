@@ -13,7 +13,6 @@ class TokenTransformer extends ParentTransformer
             'object' => $token->getResourceKey(),
             'token_type' => $token->tokenType,
             'access_token' => $token->accessToken,
-            'refresh_token' => $token->refreshToken,
             'expires_in' => $token->expiresIn,
         ];
     }

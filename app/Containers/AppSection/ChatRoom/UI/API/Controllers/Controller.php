@@ -6,7 +6,6 @@ use Apiato\Core\Exceptions\CoreInternalErrorException;
 use Apiato\Core\Exceptions\IncorrectIdException;
 use Apiato\Core\Exceptions\InvalidTransformerException;
 use App\Containers\AppSection\ChatRoom\Actions\CreateChatRoomAction;
-use App\Containers\AppSection\ChatRoom\Actions\DeleteChatRoomAction;
 use App\Containers\AppSection\ChatRoom\Actions\FindChatRoomByIdAction;
 use App\Containers\AppSection\ChatRoom\Actions\JoinChatRoomAction;
 use App\Containers\AppSection\ChatRoom\Actions\LeaveChatRoomAction;
@@ -35,7 +34,6 @@ class Controller extends ApiController
         private readonly LeaveChatRoomAction $leaveChatRoomAction,
         private readonly FindChatRoomByIdAction $findChatRoomByIdAction,
         private readonly ListSubscribedChatRoomsAction $listSubscribedChatRoomsAction,
-        private readonly DeleteChatRoomAction $deleteChatRoomAction,
     ) {
     }
 
