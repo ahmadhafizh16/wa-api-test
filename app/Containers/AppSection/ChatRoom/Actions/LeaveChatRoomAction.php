@@ -48,7 +48,7 @@ class LeaveChatRoomAction extends ParentAction
 
         $this->decreateMemberChatRoomCountTask->run($data['chat_room_id']);
 
-        broadcast(LeaveChatRoomEvent::dispatch($user, $data['chat_room_id']))->toOthers();
+        broadcast(new LeaveChatRoomEvent($user, $data['chat_room_id']))->toOthers();
 
         return $deleted;
     }
