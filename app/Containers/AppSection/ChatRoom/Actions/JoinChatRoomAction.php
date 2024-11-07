@@ -2,7 +2,7 @@
 
 namespace App\Containers\AppSection\ChatRoom\Actions;
 
-use App\Containers\AppSection\ChatMessage\Events\JoinChatRoomEvent;
+use App\Containers\AppSection\ChatRoom\Events\JoinChatRoomEvent;
 use App\Containers\AppSection\ChatRoom\Models\Subscription;
 use App\Containers\AppSection\ChatRoom\Tasks\CreateSubscriptionTask;
 use App\Containers\AppSection\ChatRoom\Tasks\FindSubscriptionTask;

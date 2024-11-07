@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\AppSection\ChatMessage\Events;
+namespace App\Containers\AppSection\ChatRoom\Events;
 
 use App\Containers\AppSection\User\Models\User;
 use App\Ship\Parents\Events\Event as ParentEvent;

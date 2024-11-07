@@ -2,7 +2,7 @@
 
 namespace App\Containers\AppSection\ChatRoom\Actions;
 
-use App\Containers\AppSection\ChatMessage\Events\LeaveChatRoomEvent;
+use App\Containers\AppSection\ChatRoom\Events\LeaveChatRoomEvent;
 use App\Containers\AppSection\ChatRoom\Tasks\DeleteSubscriptionTask;
 use App\Containers\AppSection\ChatRoom\Tasks\FindChatRoomByIdTask;
 use App\Containers\AppSection\ChatRoom\Tasks\FindSubscriptionTask;
