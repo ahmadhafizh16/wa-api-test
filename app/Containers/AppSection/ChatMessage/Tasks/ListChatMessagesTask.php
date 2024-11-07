@@ -23,6 +23,7 @@ class ListChatMessagesTask extends ParentTask
         $limit = request('limit', 10);
 
         return $this->repository
+            ->with('user')
             ->where('chat_room_id', $chatRoomId)
             ->orderBy('created_at','DESC')
             ->paginate($limit)

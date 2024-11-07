@@ -21,6 +21,7 @@ class ChatMessageTransformer extends ParentTransformer
             'id' => $chatmessage->id,
             'chat_room_id' => $chatmessage->chat_room_id,
             'sender_id' => $chatmessage->sender_id,
+            'sender_name' => $chatmessage->user->name,
             'content' => [
                 'text' => $chatmessage->content['text'],
                 'attachment' => $chatmessage->content['attachment'] ? asset('storage/'.$chatmessage->content['attachment']) : null,

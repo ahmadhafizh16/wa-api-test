@@ -51,7 +51,7 @@ class CreateChatMessageAction extends ParentAction
             'chat_room_id' => $request->chat_room_id,
             'content' => $data,
         ];
-        $chatMessage = $this->createChatMessageTask->run($chatInput);
+        $chatMessage = $this->createChatMessageTask->run($chatInput)->load('user');
         MessageSend::dispatch($chatMessage);
 
         return $chatMessage;
