@@ -3,8 +3,6 @@
 namespace App\Containers\AppSection\Authentication\Actions;
 
 use Apiato\Core\Exceptions\IncorrectIdException;
-use App\Containers\AppSection\Authentication\Notifications\Welcome;
-use App\Containers\AppSection\Authentication\Tasks\SendVerificationEmailTask;
 use App\Containers\AppSection\Authentication\UI\API\Requests\RegisterUserRequest;
 use App\Containers\AppSection\User\Models\User;
 use App\Containers\AppSection\User\Tasks\CreateUserTask;
@@ -15,7 +13,6 @@ class RegisterUserAction extends ParentAction
 {
     public function __construct(
         private readonly CreateUserTask $createUserTask,
-        private readonly SendVerificationEmailTask $sendVerificationEmailTask,
     ) {
     }
 

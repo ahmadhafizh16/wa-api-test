@@ -18,8 +18,26 @@
  * @apiSuccessExample  {json} Success-Response:
  * HTTP/1.1 200 OK
  * {
- *     // Insert the response of the request here...
- * }
+ *   "data": {
+ *       "id": 23,
+ *       "chat_room_id": "0dfd20fa-21da-4a58-a50a-cb5b7aac12bf",
+ *       "sender_id": 4,
+ *       "content": {
+ *           "text": "lets have a chat",
+ *           "attachment": "http://api.ggl-api.localhost/storage",
+ *           "reply": {
+ *               "message_id": 2,
+ *               "user_name": "name",
+ *               "message": "lets have a chat"
+ *           }
+ *       },
+ *       "created_at": "2024-11-07 05:23:07.479173"
+ *   },
+ *   "meta": {
+ *       "include": [],
+ *       "custom": []
+ *   }
+ *}
  */
 
 use App\Containers\AppSection\ChatMessage\UI\API\Controllers\Controller;
