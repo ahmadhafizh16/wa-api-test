@@ -2,7 +2,7 @@
 
 /**
  * @apiGroup           ChatRoom
- * @apiName            ListSubscribedChatRooms
+ * @apiName            ListUnsubscribedChatRooms
  *
  * @api                {GET} /v1/chat-rooms-not-sub List of Unsubscribed Chat Rooms
  * @apiDescription     List of Unsubscribed Chat Rooms
